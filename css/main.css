@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+p, h1, ul{
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  margin:0;
+}
+
+.display{
+  width: 50%;
+  margin-right: auto;
+  margin-left:auto;
+  margin-top: 50px;
+}
+
+.display-extend{
+  width: 50%;
+  margin-right: auto;
+  margin-left:auto;
+  margin-top: 50px;
+}
+
+.display-lower{
+  width: 100%;
+  margin-right: auto;
+  margin-left:auto;
+  margin-top: 100px;
+}

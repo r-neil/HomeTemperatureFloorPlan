@@ -1,0 +1,278 @@
+
+#floorplan{
+  	width: 600px;
+  	height: 465px;
+  	margin: auto;
+  	background-color: #CCCCFF;
+  	position: relative;
+}
+/********************************/
+/*           OFFICE             */
+/********************************/
+#office{
+  	width: 30%;
+  	height: 61%;
+  	border-style: solid;
+  	border-width: 5px;
+  	position:absolute;
+    bottom:0;
+    right:0;
+}
+
+#office-door{
+  height: 40px;
+  width: 40px;
+  border-width: 3px 2px 2px 7px;
+  border-style: double solid solid solid;
+  border-color: black black black #CCCCFF;
+  -webkit-border-radius: 0 0 52px 0;
+  position:absolute;
+  top: 2;
+  left: -5;
+}
+
+#office-window-right{
+  height: 70px;
+  width: 0px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  top: 50;
+  right: -4;
+}
+
+#office-window-bottom{
+  height: 0px;
+  width: 70px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  right: 50;
+  bottom: -4;
+}
+
+/********************************/
+/*           BEDROOM 1          */
+/********************************/
+#bedroom1{
+  width: 28%;
+  height: 53%;
+  border-style: solid;
+  border-width: 5px;
+  position:absolute;
+  bottom:0;
+  left: 0;
+}
+
+#bedroom1-door{
+  height: 40px;
+  width: 40px;
+  border-width: 3px 7px 2px 2px;
+  border-style: double solid solid solid;
+  border-color: black #CCCCFF black black;
+  -webkit-border-radius: 0 0 0 52px;
+  position:absolute;
+  top: 2;
+  right: -5;
+}
+
+#bedroom1-window-bottom{
+  height: 0px;
+  width: 70px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  right: 50;
+  bottom: -4;
+}
+
+#bedroom1-window-left{
+  height: 70px;
+  width: 0px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  top: 50;
+  left: -4;
+}
+
+/********************************/
+/*           Nursery            */
+/********************************/
+#nursery{
+	width: 27%;
+  height: 42%;
+  border-style: solid;
+  border-width: 5px 5px 5px 0px;
+  position:absolute;
+  bottom:0;
+  left: 29%;
+}
+
+#nursery-door{
+  height: 40px;
+  width: 40px;
+  border-width: 7px 3px 2px 2px;
+  border-style: solid double solid solid;
+  border-color: #CCCCFF black black black;
+  -webkit-border-radius: 0 0 0 52px;
+  position:absolute;
+  top: -5;
+  right: 2;
+}
+
+#nursery-window{
+  height: 0px;
+  width: 70px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  right: 50;
+  bottom: -4;
+}
+
+/********************************/
+/*           STAIRS             */
+/********************************/
+
+#stairs{
+  width: 13%;
+  height: 42%;
+  border-style: solid;
+  border-width: 1px 0px 5px 0px;
+  position:absolute;
+  bottom:0;
+  left: 56%;
+}
+
+table{
+  width: 100%;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    height: 15px;
+}
+
+/********************************/
+/*           MASTER             */
+/********************************/
+
+#master{
+	width: 36%;
+  height: 50%;
+  border-style: solid;
+  border-width: 5px 0px 0px 5px;
+  float: left;
+  position: relative;
+}
+
+#master-door{
+  height: 40px;
+  width: 40px;
+  border-width: 2px 3px 7px 2px;
+  border-style: solid double solid solid;
+  border-color: black black #CCCCFF black;
+  -webkit-border-radius: 52px 0 0 0;
+  position:absolute;
+  bottom: 25;
+  right: 1;
+}
+
+#master-window-left{
+  height: 70px;
+  width: 0px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  bottom: 50;
+  left: -4;
+}
+
+#master-window-top{
+  height: 0px;
+  width: 70px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  top: -4;
+  right: 20;
+}
+
+/********************************/
+/*           MASTER BATH        */
+/********************************/
+#masterbath{
+	width: 15%;
+  	height: 43%;
+  	border-style: solid;
+  	border-width: 5px 5px 5px 5px;
+    float: left;
+    position: relative;
+}
+
+#masterbath-door{
+  height: 40px;
+  width: 40px;
+  border-width: 3px 2px 2px 7px;
+  border-style: double solid solid solid;
+  border-color: black black black #CCCCFF;
+  -webkit-border-radius: 0 0 52px 0;
+  position:absolute;
+  top: 50;
+  left: -5;
+}
+
+#masterbath-window{
+  height: 0px;
+  width: 50px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  top: -4;
+  right: 20;
+}
+
+/********************************/
+/*           BATHROOM           */
+/********************************/
+#bathroom{
+	width: 15%;
+  	height: 36%;
+  	border-style: solid;
+  	border-width: 5px 5px 5px 0px;
+  	float: left;
+    position: relative;
+}
+
+#bathroom-door{
+  height: 40px;
+  width: 40px;
+  border-width: 2px 3px 7px 2px;
+  border-style: solid double solid solid;
+  border-color: black black #CCCCFF black;
+  -webkit-border-radius: 52px 0 0 0;
+  position:absolute;
+  bottom: -5;
+  right: 4;
+}
+
+#bathroom-window{
+  height: 50px;
+  width: 0px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  position:absolute;
+  top: 30;
+  right: -4;
+}
