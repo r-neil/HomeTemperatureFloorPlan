@@ -1,7 +1,21 @@
 
 var officeTemp;
-var MQTT
-client = new Paho.MQTT.Client("10.0.1.14", Number(9001), "Wifi Temp Website");
+var MQTTHost = "10.0.1.14";
+var MQTTPort = Number(9001);
+var MQTTName = "Wifi Temp Website";
+
+
+//MQTT Subscribe Topics
+var officeSubTopic = "office";
+var masterBedSubTopic = "masterbedroom";
+var bedroomSubTopic = "bedroom";
+var nurserySubTopic = "nursery";
+var bathroomSubTopic =  "bathroom";
+var masterBathSubTopic = "masterBath";
+
+
+//Setup MQTT  client
+client = new Paho.MQTT.Client(MQTTHost, MQTTPort, MQTTName);
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
@@ -14,7 +28,12 @@ client.connect({onSuccess:onConnect});
 function onConnect() {
   // Once a connection has been made, make a subscription.
   console.log("onConnect");
-  client.subscribe("openhab/office/temperature");
+  client.subscribe(officeSubTopic);
+  client.subscribe(masterBedSubTopic);
+  client.subscribe(bedroomSubTopic);
+  client.subscribe(nurserySubTopic);
+  client.subscribe(bathroomSubTopic);
+  client.subscribe(masterBathSubTopic);
 }
 
 // called when the client loses its connection
@@ -26,11 +45,31 @@ function onConnectionLost(responseObject) {
 
 // called when a message arrives. Updates HTML Div.
 function onMessageArrived(message) {
-  console.log("onMessageArrived:"+message.payloadString);
+  console.log("onMessageArrived:"+message.destinationName);
+
   //Messages are in Celsius. Converts to Fahrenheit
-  officeTemp = celsiusToFahrenheit(message.payloadString);
-  console.log("office temp " + officeTemp);
-  document.getElementById("officeTemp").innerHTML = officeTemp + "&deg;";
+  tempStr = celsiusToFahrenheit(message.payloadString) + "&deg;";
+  console.log("temp is " + tempStr);
+
+  if (message.destinationName == officeSubTopic){
+    document.getElementById("officeTemp").innerHTML = tempStr;
+  }
+  else if (message.destinationName == masterBedSubTopic){
+    document.getElementById("masterBedTemp").innerHTML = tempStr;
+  }
+  else if (message.destinationName == bedroomSubTopic){
+    document.getElementById("bedroomTemp").innerHTML = tempStr;
+  }
+  else if (message.destinationName == nurserySubTopic){
+    document.getElementById("nurseryTemp").innerHTML = tempStr;
+  }
+  else if (message.destinationName == bathroomSubTopic){
+    document.getElementById("bathroomTemp").innerHTML = tempStr;
+  }
+  else if (message.destinationName == masterBathSubTopic){
+    document.getElementById("masterbathTemp").innerHTML = tempStr;
+  }
+  
 }
 
 function celsiusToFahrenheit(value){
